@@ -1,23 +1,65 @@
 .page {
-    padding: 0 10rem;
+    padding: 0 5rem;
 }
 
 .profile {
-    margin : 2rem;
-    float : left;
+    display : flex;
+    gap : 1rem;
+    font-size: 2rem;
+}
+
+.image {
+    min-height: 144px;
+    min-width: 144px;
 }
 
 .main {
-    background-color: lightblue;
+    padding: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    font-size: 1.25rem;
 }
 
 .repobox {
     margin: auto;
-    max-width: 405px;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    max-width: 400px;
 }
 
 .repocard {
-    width : 300px;
+    padding: 20px;
+    text-align: left;
+    max-width : 400px;
+}
+
+.repobox {
+    display: flex;
+    min-width: 800px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 1050px) {
+    .repobox {
+        min-width: 500px;
+    }
+}
+
+@media only screen and (max-width : 750px) {
+
+    .page {
+        padding: 0 3rem;
+    }
+    
+    .main > h1 {
+        font-size: 2rem;
+    }
+
+    .repobox {
+        min-width: 300px;
+    }
+    
+    .repocard {
+        max-width: inherit;
+    }
 }

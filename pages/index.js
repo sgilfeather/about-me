@@ -3,6 +3,15 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import React from 'react'
 import RepoCard from '/node_modules/react-repo-card'
+import { useWindupString } from 'windups'
+
+const Hello = () => {
+    const [text] = useWindupString(
+        "It's nice to meet you.",
+        { pace : (char) => (char === " " ? 100 : 80), }
+    );
+    return <div>{text}</div>;
+  };
 
 export default function Home() {
     return (
@@ -14,20 +23,22 @@ export default function Home() {
         
 
         <div className={styles.main}>
-            <h1>Excited to connect with you.</h1>
+            <h1><Hello /></h1>
 
-            <div>
-            <Image
-                src="/profile.jpg"
-                className={styles.profile}
-                height={144}
-                width={144}
-                alt={"Skylar Gilfeather"}
-            />
-            <p> Hello - I'm Skylar Gilfeather, a web developer and
-                based in Boston, MA. 
-            </p>
+            <div className={styles.profile}>
+                <span className={styles.image}>
+                    <Image
+                            src="/profile.jpg"
+                            height={144}
+                            width={144}
+                            alt={"Skylar Gilfeather"}
+                    />
+                </span>
+                <span> Hello - I'm Skylar Gilfeather, a programmer based in
+                    Boston, MA. 
+                </span>
             </div>
+
             <h2> Experience </h2>
             <div className={styles.textblock}>
                 <p> 
@@ -52,18 +63,21 @@ export default function Home() {
             <h2> Projects </h2>
             <div>
                 <div className={styles.repobox}>
-                    <RepoCard className={styles.repocard} 
-                    username="sgilfeather" repository="funngames" />
+                    <span className={styles.repocard}>
+                    <RepoCard username="sgilfeather" repository="funngames" />
+                    </span>
 
-                    <RepoCard className={styles.repocard} 
-                    username="sgilfeather" repository="fall2021-data-structs"/>
+                    <span className={styles.repocard}>
+                    <RepoCard username="sgilfeather" repository="fall2021-data-structs" />
+                    </span>
 
-                   <RepoCard className={styles.repocard} 
-                    username="sgilfeather" repository="letitbe.txt"/>
+                    <span className={styles.repocard}>
+                    <RepoCard username="sgilfeather" repository="letitbe.txt" />
+                    </span>
 
-                    <RepoCard className={styles.repocard} 
-                    username="sgilfeather" repository="about-me"/>
-
+                    <span className={styles.repocard}>
+                    <RepoCard username="sgilfeather" repository="about-me" />
+                    </span>
                 </div>
             </div>
         </div>
