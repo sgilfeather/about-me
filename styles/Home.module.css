@@ -1,0 +1,23 @@
+.page {
+    padding: 0 10rem;
+}
+
+.profile {
+    margin : 2rem;
+    float : left;
+}
+
+.main {
+    background-color: lightblue;
+}
+
+.repobox {
+    margin: auto;
+    max-width: 405px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.repocard {
+    width : 300px;
+}
